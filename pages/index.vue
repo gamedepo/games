@@ -8,7 +8,7 @@ div
     v-text="$auth.user.name"
   )
 
-  h3 {{ email }}
+  h3(v-if="$auth.loggedIn") {{ email }}
 </template>
 
 <script>
