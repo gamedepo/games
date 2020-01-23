@@ -22,6 +22,16 @@ export default {
      * options for auth module.
      */
     auth: {
+        strategies: {
+            // disable local scheme.
+            local: false,
+
+            // config the auth0 scheme.
+            auth0: {
+                domain: 'games-leocorn.auth0.com',
+                client_id: 'tLZ6wcgl6vS3mKnp7pTaMSTTCnmuLzRx'
+            }
+        }
     },
     
     /**
