@@ -11,8 +11,18 @@ export default {
     buildModules: [
         // load the nuxtjs vutify-module
         // https://github.com/nuxt-community/vuetify-module
-        '@nuxtjs/vuetify'
+        '@nuxtjs/vuetify',
+        // Axios module.
+        '@nuxtjs/axios',
+        // Auth module.
+        '@nuxtjs/auth'
     ],
+
+    /**
+     * options for auth module.
+     */
+    auth: {
+    },
 
     /**
      * options to set up vuetify, details on page
