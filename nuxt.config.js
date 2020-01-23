@@ -23,6 +23,15 @@ export default {
      */
     auth: {
     },
+    
+    /**
+     * config router to globally enable authentication.
+     * We could disable the auth in an individual page by
+     * set the auth to false
+     */
+    router: {
+        middleware: ['auth']
+    },
 
     /**
      * options to set up vuetify, details on page
