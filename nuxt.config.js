@@ -3,6 +3,9 @@
  */
 export default {
 
+    // set to Single Page application mode.
+    mode: 'spa',
+
     server: {
         // port: 3000, // default is 3000
         host: '0.0.0.0' // default is localhost
@@ -31,6 +34,13 @@ export default {
                 domain: 'games-leocorn.auth0.com',
                 client_id: 'tLZ6wcgl6vS3mKnp7pTaMSTTCnmuLzRx'
             }
+        },
+
+        redirect: {
+            login: '/login',
+            logout: '/',
+            callback: '/login/',
+            home: '/'
         }
     },
     
