@@ -1,6 +1,7 @@
 <template lang="pug">
-div
-  h1 Hello Nuex.js
+v-container(grid-list-md text-center)
+
+  h1 Hello Games!
 
   v-chip(
     v-if="$auth.loggedIn"
@@ -14,11 +15,16 @@ div
 <script>
 export default {
 
+    // set the layout, the file name in layouts folder.
+    layout: 'vuetify',
+
+    name: 'GameHomepage',
+
     auth: false,
     
     computed: {
-        email() {
 
+        email() {
             console.log(this.$auth.user);
             return this.$auth.user.email;
         }
