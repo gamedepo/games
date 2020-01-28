@@ -15,16 +15,39 @@ v-app
       @click="login"
     )
       | Sign In
-    v-btn(
-      v-if="$auth.loggedIn" 
-      color="indigo"
-      depressed
+    v-menu(
+      v-if="$auth.loggedIn"
+      left bottom offset-y transition="scale-transition"
     )
-      v-avatar(
-        size="32"
-      )
-        img(:src="$auth.user.picture")
-        v-icon mdi-menu-down
+      template( v-slot:activator="{ on }" )
+        v-btn(
+          v-if="$auth.loggedIn" 
+          v-on="on"
+          color="indigo"
+          depressed
+        )
+          v-avatar(
+            size="32"
+          )
+            img(:src="$auth.user.picture")
+            v-icon mdi-menu-down
+      v-card
+        v-list
+          v-list-item
+            v-list-item-avatar
+              img( :src="$auth.user.picture" )
+            v-list-item-content
+              v-list-item-title {{$auth.user.name}}
+              v-list-item-subtitle {{$auth.user.email}}
+          v-list-item( @click="logout" )
+            v-list-item-title Logout
+
+        v-divider
+
+        v-list
+          v-list-item( v-for="n in 5" :key="n" @click="() => {}" )
+            v-list-item-title Option {{ n }}
+
 
   v-content
     Nuxt/
@@ -44,6 +67,11 @@ export default {
                 .catch(error => {
                     console.log(error);
                 });
+        },
+
+        logout: function() {
+
+            return this.$auth.logout();
         }
     }
 }
