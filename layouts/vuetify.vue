@@ -21,11 +21,10 @@ v-app
       depressed
     )
       v-avatar(
-        size="33"
+        size="32"
       )
         img(:src="$auth.user.picture")
         v-icon mdi-menu-down
-
 
   v-content
     Nuxt/
