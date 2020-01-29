@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+v-container(grid-list-md text-center)
   h2 Login
   hr
   v-btn(@click="login") Login Auth0
@@ -13,6 +13,10 @@ div
 
 <script>
 export default {
+
+    layout: 'vuetify',
+    name: 'LoginPage',
+
     methods: {
         login: function() {
 
