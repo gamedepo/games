@@ -5,7 +5,7 @@ v-app
     v-app-bar-nav-icon/
     v-toolbar-title Games for fun
     v-spacer
-    v-btn(icon)
+    v-btn(icon to="/" nuxt)
       v-icon mdi-home
     // sign in button for not logged in user.
     v-btn(
